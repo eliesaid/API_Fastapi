@@ -1,0 +1,25 @@
+Ce doc detaille l archtecture de mon API:
+
+Dans cette API, j'ai construit 3 routes:
+
+Route_1:@app.get("/",name="TEST API").
+cette route consiste à faire un test simple sur le fonctionnement de l'API.
+
+Route_2:@app.get("/questions/",name="CHARGEMENT DE QUESTIONS PAR LES UUTILISATEURS").
+Cette route permet à l'utilisateur de charger des questions.
+L'utilisateur doit pouvoir choisir un use et un ou plusieurs subject.
+Pour pouvoir effectuer ce processus, l'utilistateur doit s'identifier (nom et mot de passe)
+Il faut noter que admin peut égalment charger des questions.
+
+Route_3:@app.post("/questions/",name="AJOUT DE QUESTION PAR ADMIN").
+Cette route permet à un admin d'ajouter des questions à notre base de données (DataFrame).
+Pour réaliser cette action, l'admin s'identifie. Cela empêche à un utilisateur de saisir dans ce point.
+
+Authentications:
+J'ai construit une authentification basique qui prend juste le nom, et le mot de passe.
+ces informations sont renseignées dans un dictionnaire:users = {
+    "alice": "wonderland",
+    "bob": "builder",
+    "clementine": "mandarine",
+    "admin": "4dm1N",
+}
